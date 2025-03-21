@@ -15,7 +15,6 @@
 - [Results & Model Performance](#-results--model-performance)  
 - [Future Improvements](#-future-improvements)  
 - [Contributing](#-contributing)  
-- [License](#-license)  
 - [Acknowledgements](#-acknowledgements)  
 
 ---
@@ -150,3 +149,7 @@ Taxi fare prediction is critical for both riders and drivers to ensure transpare
    git push origin feature/new-feature
 5. Open a Pull Request.      
    
+## 🙏 Acknowledgements
+- Kaggle Community for the dataset and competition framework.
+- ReviewNB for simplifying Jupyter notebook collaboration.
+  - [![ReviewNB](https://img.shields.io/badge/ReviewNB-Interactive_Code_Review-00A98F?style=for-the-badge&logo=jupyter)](https://app.reviewnb.com/AsmitMalviya/NYC-Taxi-Fare-Prediction/blob/master/nyc-taxi-fare.ipynb/file ))    
