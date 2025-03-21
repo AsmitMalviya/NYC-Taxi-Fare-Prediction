@@ -1,5 +1,6 @@
-# olympics_analysis
-"An interactive Streamlit app for Olympics data analysis."
+# NYC Taxi Fare Prediction 🚖💵
+ Click the badge above to view interactive code reviews with ReviewNB.
+"This project predicts taxi fares in New York City using machine learning. Below is a detailed breakdown of the workflow, methodology, and results."
 
 # 🏅 Olympics Analysis Dashboard
 
