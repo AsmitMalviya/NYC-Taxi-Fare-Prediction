@@ -126,3 +126,27 @@ Taxi fare prediction is critical for both riders and drivers to ensure transpare
    ```bash
    git clone https://github.com/your-username/nyc-taxi-fare-prediction.git
    cd nyc-taxi-fare-prediction
+2. Install dependencies:  
+   ```bash
+   pip install -r requirements.txt
+3. Run the Jupyter notebook:
+   jupyter notebook nyc-taxi-fare.ipynb
+
+## 🚀 Future Improvements 
+- **Feature Engineering**: Add traffic data or weather conditions. 
+- **Deep Learning**: Experiment with neural networks (e.g., LSTMs for temporal patterns).
+- **Deployment**: Build a Flask API for real-time predictions.
+
+## 🤝 Contributing 
+1. Fork the repository.
+2. Create a branch:
+   ```bash
+   git checkout -b feature/new-feature
+3. Commit changes:
+   ```bash
+   git commit -m 'Add a new feature'
+4. Push to the branch:
+   ```bash
+   git push origin feature/new-feature
+5. Open a Pull Request.      
+   
