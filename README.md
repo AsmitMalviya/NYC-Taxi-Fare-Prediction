@@ -70,6 +70,10 @@ Taxi fare prediction is critical for both riders and drivers to ensure transpare
      - Filter invalid coordinates using NYC bounding boxes.
    - **Feature Engineering**:
      - **Haversine Distance**: Compute trip distance (in km).
+        ```python
+         def haversine(lon1, lat1, lon2, lat2):
+             # Convert to radians, calculate distance
+             return distance
      - **Temporal Features**: Extract hour, day_of_week, and month from pickup_datetime.
 4. **Model Development**
      - **Algorithms**:   
@@ -87,9 +91,9 @@ Taxi fare prediction is critical for both riders and drivers to ensure transpare
     | Linear Regression   | $5.45  |
     | Random Forest       | $4.12  |
     | **CatBoost**        | **$3.12** |  
-   -    
-6. **Evaluation**: Validate models using RMSE.  
-7. **Submission**: Generate Kaggle-compatible predictions.  
+   -
+6. **Submission**
+     - Generate predictions for the Kaggle test set and format into sample_submission.csv.
 
 ---
 
