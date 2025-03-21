@@ -39,25 +39,56 @@ Taxi fare prediction is critical for both riders and drivers to ensure transpare
 - **Training Data**: 55M+ rows (1% sampled for efficiency).  
 - **Test Data**: 9,914 rows.
 - **Features**
-  - **app.py**: Main Streamlit app for the dashboard.
-  - - **app.py**: Main Streamlit app for the dashboard.
-    - - **app.py**: Main Streamlit app for the dashboard.
-      - - **app.py**: Main Streamlit app for the dashboard.      
-- **Features**: `fare_amount`, `pickup/dropoff` coordinates, `pickup_datetime`, `passenger_count`.  
+  - **fare_amount**: Target variable (fare in USD).
+  - **pickup_datetime**: Timestamp of the ride.
+  - **pickup/dropoff_latitude/longitude**: GPS coordinatesd.
+  - **passenger_count**: Number of passengers.    
+  
 
-**Preprocessing**:  
-- Removed invalid coordinates (lat: 40–42, lon: -75–-72).  
-- Filtered negative fares and unrealistic passenger counts.  
+**Data Challenges**:  
+- Outliers (e.g., negative fares, invalid coordinates).  
+- Temporal patterns (rush hours, holidays).  
 
 ---
 
 ## 🔄 Workflow  
-1. **Data Acquisition**: Download from Kaggle using `opendatasets`.  
-2. **EDA**: Analyze distributions, visualize geospatial clusters, and detect outliers.  
-3. **Preprocessing**: Clean data and engineer features (Haversine distance, time-based features).  
-4. **Model Training**: Train and compare Linear Regression, Random Forest, and XGBoost.  
-5. **Evaluation**: Validate models using RMSE.  
-6. **Submission**: Generate Kaggle-compatible predictions.  
+1. **Data Acquisition**
+   - **Kaggle Integration**: Use opendatasets to fetch data directly from Kaggle.
+   - **Optimized Loading**: Reduce memory usage with dtype conversions (e.g., float32 for coordinates).
+   - **Sampling**: Randomly select 1% of training data (~550K rows) for faster iteration.   
+2. **Exploratory Data Analysis (EDA)**
+   - **Descriptive Statistics**:
+     - **Fare distribution**: 95% of fares are between 2.5 and 30.
+     - **Geospatial Clusters**: Removed coordinates outside NYC bounds (Lat: 40–42, Lon: -75–-72)
+    
+   - **Visualizations**:
+     - **Histogram of Fares**: Skewed distribution with a long tail.
+     - **Outliers**: Pickups concentrated in Manhattan.
+3. **Data Preprocessing**
+   - **Cleaning**:
+     - Drop rows with fare_amount ≤ 0 or passenger_count = 0.
+     - Filter invalid coordinates using NYC bounding boxes.
+   - **Feature Engineering**:
+     - **Haversine Distance**: Compute trip distance (in km).
+     - **Temporal Features**: Extract hour, day_of_week, and month from pickup_datetime.
+4. **Model Development**
+     - **Algorithms**:   
+       - **Linear Regression**: Baseline model.
+       - **Random Forest**: Handles non-linear relationships.
+       - **CatBoost**: Optimized for regression with hyperparameter tuning.
+     - **Train-Test Split**: 80-20 split with sklearn.model_selection.train_test_split.
+     - **Algorithms**: Use GridSearchCV for CatBoost.
+5. **Evaluation**
+   - **Metrics**: Root Mean Squared Error (RMSE) on the test set.
+   - **Results**:
+    | Model               | RMSE   |
+    |---------------------|--------|
+    | Linear Regression   | $5.45  |
+    | Random Forest       | $4.12  |
+    | **CatBoost**        | **$3.12** |  
+   -    
+6. **Evaluation**: Validate models using RMSE.  
+7. **Submission**: Generate Kaggle-compatible predictions.  
 
 ---
 
