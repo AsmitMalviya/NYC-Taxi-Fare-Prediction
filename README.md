@@ -71,28 +71,28 @@ Taxi fare prediction is critical for both riders and drivers to ensure transpare
    - **Feature Engineering**:
      - **Haversine Distance**: Compute trip distance (in km).
        ```python
-   import numpy as np
+       import numpy as np
 
-   def haversine(lon1, lat1, lon2, lat2):
-       """
-       Calculate the great-circle distance between two points on Earth.
-       
-       Parameters:
-       lon1, lat1: Longitude and latitude of point 1 (in degrees).
-       lon2, lat2: Longitude and latitude of point 2 (in degrees).
-       
-       Returns:
-       Distance in kilometers.
-       """
-       # Convert degrees to radians
-       lon1, lat1, lon2, lat2 = map(np.radians, [lon1, lat1, lon2, lat2])
-       
-       # Haversine formula
-       dlon = lon2 - lon1
-       dlat = lat2 - lat1
-       a = np.sin(dlat/2)**2 + np.cos(lat1) * np.cos(lat2) * np.sin(dlon/2)**2
-       c = 2 * 6371 * np.arcsin(np.sqrt(a))  # Earth radius = 6371 km
-       return c
+       def haversine(lon1, lat1, lon2, lat2):
+           """
+           Calculate the great-circle distance between two points on Earth.
+           
+           Parameters:
+           lon1, lat1: Longitude and latitude of point 1 (in degrees).
+           lon2, lat2: Longitude and latitude of point 2 (in degrees).
+           
+           Returns:
+           Distance in kilometers.
+           """
+           # Convert degrees to radians
+           lon1, lat1, lon2, lat2 = map(np.radians, [lon1, lat1, lon2, lat2])
+           
+           # Haversine formula
+           dlon = lon2 - lon1
+           dlat = lat2 - lat1
+           a = np.sin(dlat/2)**2 + np.cos(lat1) * np.cos(lat2) * np.sin(dlon/2)**2
+           c = 2 * 6371 * np.arcsin(np.sqrt(a))  # Earth radius = 6371 km
+           return c
      - **Temporal Features**: Extract hour, day_of_week, and month from pickup_datetime.
 4. **Model Development**
      - **Algorithms**:   
