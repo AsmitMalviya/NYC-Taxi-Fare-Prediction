@@ -3,7 +3,6 @@
 
 [![ReviewNB](https://img.shields.io/badge/ReviewNB-Interactive_Code_Review-00A98F?style=for-the-badge&logo=jupyter)](https://www.reviewnb.com/github/your-username/nyc-taxi-fare-prediction)  
 [![Python](https://img.shields.io/badge/Python-3.8%2B-blue?logo=python)](https://www.python.org/)  
-[![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)  
 
 ---
 
@@ -22,7 +21,7 @@
 ---
 
 ## 🎯 Problem Statement  
-Predict NYC taxi fares using spatial, temporal, and contextual features. The model addresses challenges like geospatial noise, outliers, and dynamic pricing patterns to deliver accurate fare estimates.
+Taxi fare prediction is critical for both riders and drivers to ensure transparency and efficiency. This project tackles the challenge of predicting fares accurately using spatial, temporal, and contextual features like pickup/dropoff coordinates, timestamps, and passenger counts. The goal is to build a robust regression model that generalizes well to unseen data while handling real-world complexities like outliers and geospatial noise.
 
 ---
 
