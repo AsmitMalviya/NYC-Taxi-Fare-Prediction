@@ -26,10 +26,10 @@ Taxi fare prediction is critical for both riders and drivers to ensure transpare
 ---
 
 ## ✨ Key Features  
-- **Optimized Data Handling**: Efficiently load and sample 55M+ rows.  
-- **Geospatial Analysis**: Haversine distance calculation for trip routes.  
-- **Feature Engineering**: Temporal features (hour/day/month) and outlier detection.  
-- **Model Comparison**: Linear Regression, Random Forest, and XGBoost.  
+- **Optimized Data Handling**: Load 55M+ rows efficiently using pandas with memory-friendly data types.  
+- **Geospatial Analysis**: Calculate Haversine distance between pickup/dropoff points.
+- **Feature Engineering**: Extract temporal features (hour, day, month) and detect outliers.  
+- **Model Comparison**: Test Linear Regression, Random Forest, CatBoost, and LightBGM with hyperparameter tuning.  
 - **Interactive Notebooks**: ReviewNB integration for collaborative Jupyter notebook reviews.
 
 ---
@@ -37,7 +37,9 @@ Taxi fare prediction is critical for both riders and drivers to ensure transpare
 ## 📂 Dataset  
 **Source**: [Kaggle NYC Taxi Fare Prediction](https://www.kaggle.com/c/new-york-city-taxi-fare-prediction)  
 - **Training Data**: 55M+ rows (1% sampled for efficiency).  
-- **Test Data**: 9,914 rows.  
+- **Test Data**: 9,914 rows.
+- **Features**
+  - **app.py**: Main Streamlit app for the dashboard.    
 - **Features**: `fare_amount`, `pickup/dropoff` coordinates, `pickup_datetime`, `passenger_count`.  
 
 **Preprocessing**:  
