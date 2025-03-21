@@ -39,7 +39,10 @@ Taxi fare prediction is critical for both riders and drivers to ensure transpare
 - **Training Data**: 55M+ rows (1% sampled for efficiency).  
 - **Test Data**: 9,914 rows.
 - **Features**
-  - **app.py**: Main Streamlit app for the dashboard.    
+  - **app.py**: Main Streamlit app for the dashboard.
+  - - **app.py**: Main Streamlit app for the dashboard.
+    - - **app.py**: Main Streamlit app for the dashboard.
+      - - **app.py**: Main Streamlit app for the dashboard.      
 - **Features**: `fare_amount`, `pickup/dropoff` coordinates, `pickup_datetime`, `passenger_count`.  
 
 **Preprocessing**:  
