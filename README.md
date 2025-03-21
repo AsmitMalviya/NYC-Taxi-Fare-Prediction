@@ -72,7 +72,6 @@ Taxi fare prediction is critical for both riders and drivers to ensure transpare
      - **Haversine Distance**: Compute trip distance (in km).
        ```python
        import numpy as np
-
        def haversine(lon1, lat1, lon2, lat2):
            """
            Calculate the great-circle distance between two points on Earth.
