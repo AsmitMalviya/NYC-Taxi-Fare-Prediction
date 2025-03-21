@@ -81,6 +81,7 @@ Taxi fare prediction is critical for both riders and drivers to ensure transpare
 5. **Evaluation**
    - **Metrics**: Root Mean Squared Error (RMSE) on the test set.
    - **Results**:
+     
     | Model               | RMSE   |
     |---------------------|--------|
     | Linear Regression   | $5.45  |
