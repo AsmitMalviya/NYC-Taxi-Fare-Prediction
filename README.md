@@ -2,6 +2,7 @@
 **Predicting taxi fares in New York City using machine learning**  
 
 [![ReviewNB](https://img.shields.io/badge/ReviewNB-Interactive_Code_Review-00A98F?style=for-the-badge&logo=jupyter)](https://app.reviewnb.com/AsmitMalviya/NYC-Taxi-Fare-Prediction/blob/master/nyc-taxi-fare.ipynb/file) 
+
 [![Python](https://img.shields.io/badge/Python-3.8%2B-blue?logo=python)](https://www.python.org/)  
 
 ---
