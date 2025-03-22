@@ -28,7 +28,7 @@ Taxi fare prediction is critical for both riders and drivers to ensure transpare
 ## ✨ Key Features  
 - **Optimized Data Handling**: Load 55M+ rows efficiently using pandas with memory-friendly data types.  
 - **Geospatial Analysis**: Calculate Haversine distance between pickup/dropoff points.
-- **Feature Engineering**: Extract temporal features (hour, day, month) and detect outliers.  
+- **Feature Engineering**: Extract Datetime Parsing (hour, day, month) and detect outliers.  
 - **Model Comparison**: Test Linear Regression, Random Forest, CatBoost, and LightBGM with hyperparameter tuning.  
 - **Interactive Notebooks**: ReviewNB integration for collaborative Jupyter notebook reviews.
 
@@ -55,7 +55,10 @@ Taxi fare prediction is critical for both riders and drivers to ensure transpare
 1. **Data Acquisition**
    - **Kaggle Integration**: Use opendatasets to fetch data directly from Kaggle.
    - **Optimized Loading**: Reduce memory usage with dtype conversions (e.g., float32 for coordinates).
-   - **Sampling**: Randomly select 1% of training data (~550K rows) for faster iteration.   
+   - **Sampling**: Randomly select 1% of training data (~550K rows) for faster iteration.
+     ```python
+     sample_frac = 0.01
+     df = pd.read_csv(..., skiprows=lambda i: i>0 and random.random() > sample_frac)    
 2. **Exploratory Data Analysis (EDA)**
    - **Descriptive Statistics**:
      - **Fare distribution**: 95% of fares are between 2.5 and 30.
@@ -66,8 +69,8 @@ Taxi fare prediction is critical for both riders and drivers to ensure transpare
      - **Outliers**: Pickups concentrated in Manhattan.
 3. **Data Preprocessing**
    - **Cleaning**:
-     - Drop rows with fare_amount ≤ 0 or passenger_count = 0.
-     - Filter invalid coordinates using NYC bounding boxes.
+     - Removed negative fares and extreme values (e.g., fare_amount > $100).
+     - Filtered invalid coordinates (latitude: 40–42, longitude: -75–-72).
    - **Feature Engineering**:
      - **Haversine Distance**: Compute trip distance (in km).
        ```python
@@ -92,7 +95,7 @@ Taxi fare prediction is critical for both riders and drivers to ensure transpare
            a = np.sin(dlat/2)**2 + np.cos(lat1) * np.cos(lat2) * np.sin(dlon/2)**2
            c = 2 * 6371 * np.arcsin(np.sqrt(a))  # Earth radius = 6371 km
            return c
-     - **Temporal Features**: Extract hour, day_of_week, and month from pickup_datetime.
+     - **Datetime Parsing:**: Extract hour, day_of_week, and month from pickup_datetime.
 4. **Model Development**
      - **Algorithms**:   
        - **Linear Regression**: Baseline model.
