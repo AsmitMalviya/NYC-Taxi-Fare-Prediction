@@ -111,7 +111,7 @@ Taxi fare prediction is critical for both riders and drivers to ensure transpare
     |---------------------|--------|
     | Linear Regression   | $5.45  |
     | Random Forest       | $4.12  |
-    | **CatBoost**        | **$3.12** |  
+    | **CatBoost**        | **$3.16** |  
    -
 6. **Submission**
      - Generate predictions for the Kaggle test set and format into sample_submission.csv.
